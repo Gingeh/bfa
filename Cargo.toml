@@ -1,0 +1,28 @@
+[package]
+name = "bfa"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "bfa"
+
+[dependencies]
+rustc-hash = { version = "2.1.0", default-features = false }
+smallvec = { git = "https://github.com/servo/rust-smallvec", version = "2.0.0-alpha.9", features = [
+    "specialization",
+] }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+panic = "abort"
+
+[profile.bench]
+debug = true
+
+[[bench]]
+name = "benchmarks"
+harness = false
