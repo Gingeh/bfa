@@ -8,9 +8,7 @@ name = "bfa"
 
 [dependencies]
 rustc-hash = { version = "2.1.0", default-features = false }
-smallvec = { git = "https://github.com/servo/rust-smallvec", version = "2.0.0-alpha.9", features = [
-    "specialization",
-] }
+smallvec = { git = "https://github.com/servo/rust-smallvec", version = "2.0.0-alpha.9" }
 
 [dev-dependencies]
 criterion = "0.5"
